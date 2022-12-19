@@ -12,23 +12,23 @@ function App() {
   }
 
   return (
-    <section>
-      <div className='section-center'>
-        <h3>TIRED OF BORING LOREM IPSUM?</h3>
-        <form className='lorem-form'>
-          <label htmlFor='paragraphs' className='label'>
-            Paragraphs:
-          </label>
-          <input
-            type='number'
-            id='paragraphs'
-            value={count}
-            onChange={(e) => setCount(e.target.value)}
-          />
-          <button type='submit' className='btn' onClick={handleSubmit}>
-            Generate
-          </button>
-        </form>
+    <section className='section-center'>
+      <h3>tired OF BORING LOREM IPSUM?</h3>
+      <form className='lorem-form'>
+        <label htmlFor='paragraphs' className='label'>
+          Paragraphs:
+        </label>
+        <input
+          type='number'
+          id='paragraphs'
+          value={count}
+          onChange={(e) => setCount(e.target.value)}
+        />
+        <button type='submit' className='btn' onClick={handleSubmit}>
+          Generate
+        </button>
+      </form>
+      <article className='result'>
         {text.map((item, index) => {
           return (
             <div key={index}>
@@ -36,7 +36,7 @@ function App() {
             </div>
           )
         })}
-      </div>
+      </article>
     </section>
   )
 }
