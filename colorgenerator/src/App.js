@@ -4,7 +4,13 @@ import SingleColor from './SingleColor'
 import Values from 'values.js'
 
 function App() {
-  return <h2>color generator project</h2>
+  return (
+    <div className='container'>
+      <h3>Color generator</h3>
+      <input type='text' />
+      <button className='btn'>Submit</button>
+    </div>
+  )
 }
 
 export default App
