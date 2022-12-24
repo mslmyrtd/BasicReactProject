@@ -11,10 +11,20 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!name) {
-      // display alert
       showAlert(true, 'please enter value', 'danger')
     } else if (name && isEditing) {
-      //do Something
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return { ...item, title: name }
+          }
+          return item
+        })
+      )
+      setName('')
+      setEditID(null)
+      setIsEditing(false)
+      showAlert(true, 'value updated', 'success')
     } else {
       showAlert(true, 'item added to the list', 'success')
       const newItem = { id: new Date().getTime().toString(), title: name }
@@ -39,7 +49,6 @@ function App() {
     setEditID(id)
     setName(specificItem.title)
 
-    // showAlert(true, 'item removed', 'danger')
     // setList(list.filter((item) => item.id !== id));
   }
   return (
